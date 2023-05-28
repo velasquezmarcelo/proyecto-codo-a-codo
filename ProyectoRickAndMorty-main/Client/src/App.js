@@ -15,10 +15,12 @@ function App () {
   const [access,setAccess] = useState(false)
 
   const username = 'sebastian@yahoo.com';
+  const username1= 'marcelo@yahoo.com';
+  const username2= 'ivan@yahoo.com';
   const password = '123456';
 
   const login = (userData)=>{
-    if (userData.password === password && userData.username === username) {
+    if (userData.password === password && userData.username === username ||userData.username === username1 ||userData.username === username2) {
       setAccess(true);
       navigate('/home');
    }

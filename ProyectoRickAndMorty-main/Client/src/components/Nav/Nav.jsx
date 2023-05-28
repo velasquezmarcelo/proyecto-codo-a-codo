@@ -1,22 +1,24 @@
 import React from "react";
 import SearchBar from "../SearchBar/SearchBar";
 import { Link } from "react-router-dom";
-import { Divlinks } from "./Nav.styled";
+import { Divlinks, Boton, LinkNuevo,Boton2,LinkNuevo2} from "./Nav.styled";
 
 const Nav= (props)=>{
     
 return(
 <div>
       <Divlinks>
-     <Link to="/about">About</Link>
-      <Link to="/home">Home</Link>
-      <Link to="/favorites">Favorites</Link>
+      <Boton><LinkNuevo to="/about">About</LinkNuevo></Boton>
+      <Boton><LinkNuevo to="/home">Home</LinkNuevo></Boton>
+      <Boton><LinkNuevo to="/favorites">Favorites</LinkNuevo></Boton>
       </Divlinks>
-      <div>
-    <Link to="/"><button>Desloguearse</button></Link>
-      </div>
+
+      <SearchBar onSearch={props.onSearch}/>
+      <Divlinks>
+      <Boton2><LinkNuevo2 to="/">Desloguearse</LinkNuevo2></Boton2>
+      </Divlinks>
     
-    <SearchBar onSearch={props.onSearch}/>
+    
 </div>
 )    
 }

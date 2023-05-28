@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect  } from "react";
 import { useParams } from "react-router-dom"
 import { Link } from "react-router-dom";
-import { DivCardDetail, Mih2Detail } from "./Detail.styled";
+import { DivCardDetail, Mih2Detail, EstilosImagen,BotonDetail, LinkNuevo } from "./Detail.styled";
 
 const Detail = () => {
 
@@ -32,7 +32,7 @@ const Detail = () => {
         <div>
 
           <DivCardDetail>
-            <img src={character.image} alt="imagen personaje" />
+            <EstilosImagen src={character.image} alt="imagen personaje" />
             <Mih2Detail> Nombre:{character.name}</Mih2Detail>
             <div>
             <Mih2Detail>Estado: {character.status}</Mih2Detail>
@@ -44,9 +44,11 @@ const Detail = () => {
             
 
             <div>
-            <Link to="/home">
-            <button>REGRESAR A HOME</button>
-            </Link>
+              <BotonDetail>
+            <LinkNuevo to="/home">
+            Regresar a home
+            </LinkNuevo>
+             </BotonDetail>
             </div>
         </div>
     )
