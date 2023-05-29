@@ -5,6 +5,7 @@ const About = () =>{
 
 
 return(
+
     <Ivan>
         <h1>Sobre Nosotros</h1>
         <h2>GRUPO 8</h2>
