@@ -1,10 +1,10 @@
 import React from "react";
 import validation from "./validation"
-
+import { Body, Forms } from "./Form.styled";
 const Form = ({login}) =>{
     
-    const [userData, setUserData] = React.useState({ username: '', password: '' });
-    const [errors, setErrors] = React.useState({username: '', password: '' })
+    const [userData, setUserData] = React.useState({ username: '', password: '' , fullname: ''});
+    const [errors, setErrors] = React.useState({username: '', password: '', fullname: '' })
 
     const handleInputChange = (event) => {
         let property = event.target.name;
@@ -25,8 +25,20 @@ const Form = ({login}) =>{
       }
 
 return(
-    
+        <>
+        <Body>
+        <h2>FORMULARIO DE REGISTRO</h2>
         <form onSubmit={handleSubmit}>
+          <Forms>
+                <label>Completa el formulario con tus datos</label>
+                <br></br>
+                
+                <label htmlFor="">Nombre Completo:</label>
+                <input type="text" onChange={handleInputChange} name="fullname" value={userData.name}/>
+
+                {errors.fullname && <p style={{color:"red"}}>{errors.fullname}</p>}
+
+
                 <label htmlFor="">Usuario:</label>
                 <input type="text" onChange={handleInputChange} name="username" value={userData.name}/>
                
@@ -38,7 +50,10 @@ return(
                 {errors.password && <p style={{color:"red"}}>{errors.password}</p>}
 
                 <button>Loguearse</button>
-            </form>
+          </Forms>
+        </form>
+        </Body>
+        </>
     
 )
 

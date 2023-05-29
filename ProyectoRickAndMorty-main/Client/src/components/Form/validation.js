@@ -15,5 +15,11 @@ errors.password = "La contraseña debe contener al menos un numero"
 if (userdata.password.length < 6 && userdata.password.length >10){
     errors.password = "La contraseña debe contener entre 6 y 10 caracteres"
 }
+if(!userdata.fullname){
+    errors.fullname = "Este campo no puede estar vacio"
+}
+if(userdata.fullname.length > 35){
+    errors.fullname ="El Nombre no puede superar los 35 caracteres"
+}
 return errors
 }
